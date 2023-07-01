@@ -1,0 +1,172 @@
+/* reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* utility classes  */
+
+.nowrap {
+    white-space: nowrap;
+}
+
+/* general styles */
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: cadetblue;
+    min-height: 100vh;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+header , footer {
+    position: sticky;
+    background-color: black;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+header {
+    top: 0;
+    padding: 20px;
+}
+
+footer {
+    bottom: 0;
+    padding: 10px;
+}
+
+nav {
+    background-color: black;
+    padding: 10px;
+    border-bottom: 1px solid white;
+    font-size: large;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+nav ul {
+    text-decoration: none;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a{
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+nav a:visited {
+    color: white;
+}
+
+nav a:hover , nav a:focus {
+    color: red;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.box {
+    scroll-margin-top: 100px;
+    width: (100% , 350px);
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: darkgrey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+}
+
+.box img {
+    width: 200px;
+    height: 200px;
+    border: 5px double green;
+    border-radius: 50%;
+}
+
+.box:target {
+    border: 5px solid red;
+}
+
+/* small screen */
+
+@media screen and (min-width : 576px) {
+    main {
+        justify-content: center;
+        flex-flow: row wrap;
+        padding: 1rem;
+    }
+
+    .box{
+        min-width: (100% , 300px);
+    }
+
+    .box:nth-child(3) {
+        order: -1;
+    }
+}
+
+/* medium screen */
+
+@media screen and (min-width : 768px) {
+    
+    nav {
+        display: none;
+    }
+
+    .box {
+        min-width: (100% , 325px);
+    }
+
+    .box:nth-child(5) {
+        order: -1;
+    }
+}
+
+/* large screen */
+
+@media screen and (min-width : 992px) {
+    
+    .box {
+        min-width: (100% , 400px);
+    }
+
+    .box:nth-child(4) {
+        order: -1;
+    }
+}
+
+/* extre large screen */
+
+@media screen and (min-width : 1200px){
+    
+    .box {
+        min-width: (30% - 1rem , 300px);
+    }
+}
